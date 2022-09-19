@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_3"
+    tools:context=".DetailAudioActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        app:cardBackgroundColor="@color/color_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_above="@id/textView4"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_book"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/descTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Введение"
+        android:textColor="@color/white"
+        android:textColorLink="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/descTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/descTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seek_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Введение"
+        android:textColor="@color/teal_700"
+        android:textColorLink="#FFFFFF"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:scrollbarSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descTitle" />
+
+    <TextView
+        android:id="@+id/player_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seek_bar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="@+id/seek_bar"
+        app:layout_constraintTop_toBottomOf="@+id/seek_bar" />
+
+    <TextView
+        android:id="@+id/player_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seek_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="@+id/seek_bar"
+        app:layout_constraintTop_toBottomOf="@+id/seek_bar" />
+
+    <Button
+        android:id="@+id/adView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="AdMob Banner"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seek_bar"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/btn_download"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_download"
+            app:tint="@color/white" />
+        <ImageView
+            android:id="@+id/btn_download_done"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_download_done"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btnPrev"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_rewind"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btn_rew"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_replay_5"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btn_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="#00C6ABAB"
+            app:srcCompat="@drawable/ic_play"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btn_pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_pause"
+            app:tint="@color/white"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/btn_ff"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_forward_5"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btnNext"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_forward"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btn_repeat"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_repeat"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
