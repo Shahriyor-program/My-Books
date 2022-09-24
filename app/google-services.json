@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "88909407246",
-    "project_id": "my-books-16cdc",
-    "storage_bucket": "my-books-16cdc.appspot.com"
+    "project_number": "226066534823",
+    "project_id": "my-books-ebcbc",
+    "storage_bucket": "my-books-ebcbc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:88909407246:android:f0af32bf74d810cf9b885f",
+        "mobilesdk_app_id": "1:226066534823:android:d59fb53b7c7eb52ac9a682",
         "android_client_info": {
           "package_name": "tjk.biznes.mybooks"
         }
       },
       "oauth_client": [
         {
-          "client_id": "88909407246-nlsl0ik13rj0o15fpp6eobn11fd7mrmd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "tjk.biznes.mybooks",
-            "certificate_hash": "f484cd77aa70f813519f976f99c4085c204bc344"
-          }
-        },
-        {
-          "client_id": "88909407246-sh49i5hntbhgc86nvv9jr9ta2vc5lc0o.apps.googleusercontent.com",
+          "client_id": "226066534823-1mbjs46tt8dp3uvipqq47lgg4vj0qger.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVjI5tc2NpnQZFJrYiiHegyFMq8eghX8w"
+          "current_key": "AIzaSyCB43byNL5n0HND7ydnoPXl-Xi0eiW0sgA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "88909407246-sh49i5hntbhgc86nvv9jr9ta2vc5lc0o.apps.googleusercontent.com",
+              "client_id": "226066534823-1mbjs46tt8dp3uvipqq47lgg4vj0qger.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

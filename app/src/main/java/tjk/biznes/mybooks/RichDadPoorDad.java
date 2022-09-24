@@ -1,23 +1,17 @@
 package tjk.biznes.mybooks;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RichDadPoorDad extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private Adapter adapter;
-    private List<Audio> audioList;
-    private Audio audio;
-    private CardView btnRead;
-
+    private myAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,30 +19,27 @@ public class RichDadPoorDad extends AppCompatActivity {
         setContentView(R.layout.rich_dad_poor_dad);
 
         recyclerView = findViewById(R.id.recycler);
-        btnRead = findViewById(R.id.btnRead);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        btnRead.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(RichDadPoorDad.this, ReadBookActivity.class));
-//                finish();
-            }
-        });
+        FirebaseRecyclerOptions<model> options =
+                new FirebaseRecyclerOptions.Builder<model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("book_rich"), model.class)
+                        .build();
 
-        GridLayoutManager manager = new GridLayoutManager(RichDadPoorDad.this,1);
-        recyclerView.setLayoutManager(manager);
+        myAdapter = new myAdapter(options);
+        recyclerView.setAdapter(myAdapter);
 
-        audioList = new ArrayList<>();
-
-        audio = new Audio(R.string.txtCh_1, R.string.ch_1 ,R.raw.foreword);
-        audioList.add(audio);
-        audio = new Audio(R.string.txtCh_2, R.string.ch_2 ,R.raw.chapter_1);
-        audioList.add(audio);
-
-        adapter = new Adapter(RichDadPoorDad.this, audioList);
-        recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        myAdapter.startListening();
+    }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        myAdapter.stopListening();
+    }
 }

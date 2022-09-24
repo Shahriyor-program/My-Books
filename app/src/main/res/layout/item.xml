@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    android:padding="5dp"
     app:cardBackgroundColor="@color/color_3"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/imageBook"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgBook"
             android:layout_width="30dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
@@ -28,10 +28,10 @@
             android:src="@drawable/logo_book" />
 
         <TextView
-            android:id="@+id/titleAudio"
+            android:id="@+id/nameChapter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/imageBook"
+            android:layout_toEndOf="@id/imgBook"
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Music"
@@ -41,11 +41,11 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/descTitle"
+            android:id="@+id/descChapter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/titleAudio"
-            android:layout_toEndOf="@id/imageBook"
+            android:layout_below="@+id/nameChapter"
+            android:layout_toEndOf="@id/imgBook"
             android:layout_marginStart="5dp"
             android:text="Пешгуфтор"
             android:textColor="@color/teal_200" />
