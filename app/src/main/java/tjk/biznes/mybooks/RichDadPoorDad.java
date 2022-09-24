@@ -4,22 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
+import tjk.biznes.mybooks.databinding.RichDadPoorDadBinding;
+
 public class RichDadPoorDad extends AppCompatActivity {
-    private RecyclerView recyclerView;
+    private RichDadPoorDadBinding binding;
     private myAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rich_dad_poor_dad);
+        binding = RichDadPoorDadBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        recyclerView = findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recycler.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
@@ -27,8 +31,15 @@ public class RichDadPoorDad extends AppCompatActivity {
                         .build();
 
         myAdapter = new myAdapter(options);
-        recyclerView.setAdapter(myAdapter);
+        binding.recycler.setAdapter(myAdapter);
 
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RichDadPoorDad.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     @Override
