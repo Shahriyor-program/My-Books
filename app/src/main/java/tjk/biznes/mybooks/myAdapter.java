@@ -39,6 +39,7 @@ public class myAdapter extends FirebaseRecyclerAdapter <model, myAdapter.myViewH
 
             nameChapter = itemView.findViewById(R.id.nameChapter);
             descChapter = itemView.findViewById(R.id.descChapter);
+            descChapter.setSelected(true);
         }
     }
 

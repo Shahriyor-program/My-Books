@@ -106,7 +106,6 @@ public class DetailAudioActivity extends AppCompatActivity {
             mp3 = bundle.getInt("mp3");
         }
 
-
         mediaPlayer = MediaPlayer.create(this, mp3);
         runnable = new Runnable() {
             @Override

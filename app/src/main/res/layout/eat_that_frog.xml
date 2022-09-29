@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_3"
-    tools:context=".RichDadPoorDad">
+    tools:context=".EatThatFrog">
 
     <!--Action Bar-->
     <RelativeLayout
@@ -44,7 +44,7 @@
                 android:fontFamily="serif"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="@string/app_name"
+                android:text="@string/eat_that_frog"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -104,7 +104,7 @@
                         android:fontFamily="serif"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:text="@string/app_name"
+                        android:text="@string/eat_that_frog"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -117,7 +117,7 @@
                         android:layout_below="@id/titleBook"
                         android:layout_marginTop="10dp"
                         android:fontFamily="serif"
-                        android:text="@string/name_author"
+                        android:text="@string/author_eat_that_frog"
                         android:textColor="@color/teal_200"
                         android:textStyle="bold" />
 
@@ -211,7 +211,7 @@
                         android:layout_below="@id/rlProgressBar"
                         android:layout_marginTop="-5dp"
                         android:fontFamily="@font/timesnewromanpsmt"
-                        android:text="@string/time_audio_book"
+                        android:text="@string/time_eat_that_frog"
                         android:textColor="@color/teal_300" />
 
                 </RelativeLayout>
@@ -293,7 +293,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/logo_book" />
+                    android:src="@drawable/qurboqqa" />
 
             </androidx.cardview.widget.CardView>
 
