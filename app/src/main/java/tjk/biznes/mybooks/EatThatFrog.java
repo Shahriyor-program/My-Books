@@ -10,11 +10,13 @@ import android.view.View;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
+import tjk.biznes.mybooks.adapter.model;
+import tjk.biznes.mybooks.adapter.myAdapter;
 import tjk.biznes.mybooks.databinding.EatThatFrogBinding;
 
 public class EatThatFrog extends AppCompatActivity {
    private EatThatFrogBinding binding;
-    private myAdapter myAdapter;
+    private tjk.biznes.mybooks.adapter.myAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class EatThatFrog extends AppCompatActivity {
 
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
 
+
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("eat_that_frog"), model.class)
@@ -32,13 +35,13 @@ public class EatThatFrog extends AppCompatActivity {
         myAdapter = new myAdapter(options);
         binding.recycler.setAdapter(myAdapter);
 
-//        binding.btnBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(EatThatFrog.this, MainActivity.class));
-//                finish();
-//            }
-//        });
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EatThatFrog.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     @Override

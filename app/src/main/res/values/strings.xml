@@ -8,4 +8,9 @@
 
     <string name="progress">18.0%</string>
     <string name="read">Хондан</string>
+
+    <!--Bottom Navigation Menu-->
+    <string name="home">Асосӣ</string>
+    <string name="setting">Танзимот</string>
+    <string name="profile">Саҳифаи шахсӣ</string>
 </resources>

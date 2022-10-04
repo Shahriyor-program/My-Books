@@ -1,4 +1,4 @@
-package tjk.biznes.mybooks;
+package tjk.biznes.mybooks.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import tjk.biznes.mybooks.R;
 
 public class myAdapter extends FirebaseRecyclerAdapter <model, myAdapter.myViewHolder> {
 
@@ -26,7 +28,7 @@ public class myAdapter extends FirebaseRecyclerAdapter <model, myAdapter.myViewH
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent,false);
         return new myViewHolder(view);
     }
 
